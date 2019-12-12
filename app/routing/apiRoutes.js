@@ -1,7 +1,7 @@
 // includes api routes that deliver the data from the front to the back-end and from the back to the front-end.
 
 // LOAD DATA
-var friends = require("../data/friends");
+var friends = require("../data/friends.js");
 
 // ROUTING
 
@@ -11,7 +11,7 @@ module.exports = function (app) {
         res.json(friends);
     });
 
-    app.post("api/friends", function(req, res) {
+    app.post("/api/tables", function(req, res) {
         var match = {
             name: "",
             photo: "",
@@ -21,9 +21,9 @@ module.exports = function (app) {
 
     // Get the result from the user survey.
     var surveyResults = req.body;
-    var surveyScore = userData.score;
+    var surveyScore = surveyResults.scores;
 
-    console.log(surveyScore);
+    // console.log("This is here: " +surveyScore);
 
     // Variable
     var difference = 0;
@@ -32,8 +32,8 @@ module.exports = function (app) {
         console.log(friends[i]);
         difference = 0;
 
-        for (var n = 0; n < friends[i].score[n]; n++) {
-            difference += Math.abs(parseInt(surveyScore[n]) = parseInt(friends[i].score[j]));
+        for (var n = 0; n < friends[i].scores[n]; n++) {
+            difference += Math.abs(parseInt(surveyScore[n]) - parseInt(friends[i].scores[n]));
 
             if (difference <= match.friendDifference) {
                 match.name =  friends[i].name;
@@ -44,6 +44,7 @@ module.exports = function (app) {
     friends.push(surveyResults);
 
     res.json(match);
+    console.log(match);
 
     })
 
