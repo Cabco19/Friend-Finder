@@ -34,12 +34,7 @@ module.exports = function (app) {
         difference = 0;
         // Nested for loop - loop through score array
         for (var n = 0; n < friends[i].scores[n]; n++) {
-            console.log("friends[i].scores[n] is: " + friends[i].scores[n]);
             difference += Math.abs(parseInt(surveyScore[n]) - parseInt(friends[i].scores[n]));
-            console.log("surveyScore[n] is: " + surveyScore[n]);
-            console.log("friends[i].scores[n] is: " + friends[i].scores[n]);
-            console.log("difference is: " + difference);
-            console.log("freindDifference is: " + match.friendDifference);
 
             if (difference <= match.friendDifference) {
                 match.name =  friends[i].name;
