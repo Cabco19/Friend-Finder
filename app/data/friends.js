@@ -63,7 +63,22 @@ var friends = [
             "4"
           ]
       },
-
+      {
+        name:"Sara",
+        photo:"https://picsum.photos/200",
+        scores:[
+            "5",
+            "3",
+            "1",
+            "2",
+            "5",
+            "1",
+            "2",
+            "4",
+            "4",
+            "5"
+          ]
+      }
 ];
 
 module.exports = friends;
