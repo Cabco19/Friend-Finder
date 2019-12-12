@@ -167,10 +167,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Modal body text goes here.</p>
+          <h3 id="matchName"></h3>
+          <img id="matchImg" src="#" alt="No Image">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Save changes</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -201,7 +201,8 @@ $(".submit").on("click", function(event) {
    console.log("Does this work " +surveyResults.name);
 
    $.post("/api/tables", surveyResults, function(data) {
-     console.log("match: " + data);
+     console.log($("#matchName").text(data.name));
+     console.log($("#matchImg").attr("src", data.photo));
     $("#testing-modal").modal("toggle");
 
    });

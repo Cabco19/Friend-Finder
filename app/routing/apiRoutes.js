@@ -37,6 +37,7 @@ module.exports = function (app) {
 
             if (difference <= match.friendDifference) {
                 match.name =  friends[i].name;
+                match.photo = friends[i].photo;
             }
         }
     }
