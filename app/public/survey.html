@@ -22,7 +22,7 @@
       <h4>Name (Required)</h4>
       <input type="text" name="" id="name" class="form-control" required><br>
       <h4>Your Photo - please upload your photo to add to your profile </h4>
-      <input type="file" name="" id="photo" class="form-control-file" required>
+      <input type="text" name="" id="photo" class="form-control-file" value="https://picsum.photos/200" placeholder="Example input" required>
       <br>
 
       <hr> 
@@ -184,6 +184,7 @@ $(".submit").on("click", function(event) {
 
    var surveyResults = {
      name: $("#name").val(),
+     
      photo: $("#photo").val(),
      scores: [
        $("#q1").val(),
@@ -198,11 +199,12 @@ $(".submit").on("click", function(event) {
        $("#q10").val()
      ]
    };
-   console.log("Does this work " +surveyResults.name);
+   console.log("Does this work " +surveyResults.photo);
+   
 
    $.post("/api/tables", surveyResults, function(data) {
      console.log($("#matchName").text(data.name));
-     console.log($("#matchImg").attr("src", data.photo));
+    $("#matchImg").attr("src", "https://picsum.photos/200");
     $("#testing-modal").modal("toggle");
 
    });
