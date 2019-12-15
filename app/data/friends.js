@@ -64,6 +64,22 @@ var friends = [
           ]
       },
       {
+      name:"Mark",
+      photo:"https://picsum.photos/200",
+      scores:[
+          "1",
+          "5",
+          "3",
+          "2",
+          "2",
+          "1",
+          "2",
+          "3",
+          "1",
+          "5"
+        ]
+      },
+      {
         name:"Sara",
         photo:"https://picsum.photos/200",
         scores:[
